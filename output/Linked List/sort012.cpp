@@ -83,5 +83,3 @@ Node * ptr0, * ptr1 ,* ptr2,*p0,*p1,*p2;
     ptr1->next=p2->next;
     ptr2->next=NULL;
     return p0->next;
-        }
-};

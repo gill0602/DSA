@@ -29,13 +29,13 @@ public:
         while(list1){
             tmp->next=list1;
             list1=list1->next;
-                        tmp=tmp->next;
+            tmp=tmp->next;
 
         }
          while(list2){
             tmp->next=list2;
             list2=list2->next;
-                        tmp=tmp->next;
+            tmp=tmp->next;
 
         }
         return dummy->next;
