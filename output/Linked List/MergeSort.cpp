@@ -19,10 +19,10 @@ class Solution {
     
     Node* merge(Node*left,Node*right){
         if(!left){
-            return left;
+            return right;
         }
         if(!right){
-            return right;
+            return left;
         }
         Node*tmp=new Node(0);
         Node*res=tmp;
