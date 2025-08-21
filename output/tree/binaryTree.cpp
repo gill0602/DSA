@@ -89,19 +89,52 @@ void postOrder(node* root){
     cout<<root->data<<" ";
 }
 
+void buildFromLevelOrder(node*& root){
+    queue<node*> q;
+    cout<<"Enter the data for root"<<endl;
+    int data;
+    cin>>data;
+    root=new node(data);
+    q.push(root);
+    while(!q.empty()){
+        node* tmp=q.front();
+        q.pop();
+
+        cout<<"Enter data for left of "<<tmp->data<<endl;
+        int leftData;
+        cin>>leftData;
+        if(leftData!=-1){
+            tmp->left=new node(leftData);
+            q.push(tmp->left);
+        }
+        cout<<"Enter data for right of "<<tmp->data<<endl;
+        int rightData;
+        cin>>rightData;
+        if(rightData!=-1){
+            tmp->right=new node(rightData);
+            q.push(tmp->right);
+        }
+    }
+
+}
+
 
 
 int main(){
     node* root=NULL;
     
-    // creating a tree
+    buildFromLevelOrder(root);
+    /*// creating a tree
     root=buildTree(root);
 
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
+
+    cout<<""<<endl;
 
     cout<<"level order traversal"<<endl;
     levelOrderTraversal(root);
 
     cout<<"in order traversal"<<endl;
-    inOrder(root);
+    inOrder(root);*/
+
 }
